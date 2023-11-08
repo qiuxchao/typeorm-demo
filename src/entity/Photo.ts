@@ -38,7 +38,9 @@ export class Photo {
 	 * 多对一关系
 	 * 多张图片对应一个用户
 	 */
-	@ManyToOne(type => Author, author => author.photos)
+	@ManyToOne(type => Author, author => author.photos, {
+		onDelete: 'CASCADE',
+	})
 	author: Author;
 
 	/**
